@@ -1,6 +1,6 @@
 # Pecots_SH-NO.1game
 这是大学生第一次做的游戏  
-关于src文件里的源文件首先我们需要去下载个[VisualStudioSetup](https://visualstudio.microsoft.com)
+关于src文件里的源文件首先我们需要去下载个[VisualStudioSetup](https://visualstudio.microsoft.com)  
 打开VS后我们安装一个**Visual Studio community**版本 将使用**C++的桌面开发**勾选将**Visual Studio扩展开发**勾选记得一定要创建三个文件夹分别存放tools vs环境 VS缓存  
 在下载期间我们去[GLEW](https://glew.sourceforge.net/)和[GLFW](https://www.glfw.org/)下载**glew**和**glfw**是我们的运行环境
 在glfw左上角中有一个名为**Download**的选项点击进去找到**Windows pre-compiled binaries**选择自己对应vs的平台设置我使用的是64bit的版本  
