@@ -28,4 +28,29 @@ glClear()|这是Opengl用于清除原来的颜色缓冲区括号中选择自己�
 -|-|
 GL_COLOR_BUFFER_BIT|当前为颜色写入启用的缓冲区。这是微软的定义我个人理解为我们上面glClearColor所设置的颜色
 -|-|
+glfwInitHint()|这是用来配置初始化的行为的比如说版本号，调用的图形库等简单来说就是你开始运行窗口的时候窗口以什么方式运行
+-|-|
+GLFW_CONTEXT_VERSION_MAJOR|这个就是一个glfwInitHint提示词用来说明用什么主版本运行
+-|-|
+GLFW_CONTEXT_VERSION_MAJOR|这个就是一个glfwInitHint提示词用来说明用什么次版本运行
+-|-|
 glfwInit()|该函数用于初始化GLFW库如果初始化失败则返回flase如果成功了则返回ture我们可以用此判断是否初始化成功
+-|-|
+glfwCreateWindow()|字面意思GLFW创建窗口里面所填的是宽 高 标题 剩下的两项主播还没搞懂将你填的转化为GLFWwindow能理解的数
+-|-|
+glfwMakeContextCurrent()|它的主要作用是设置当前线程的 OpenGL 上下文你如果使用了多线程那么你也许需要多个它来共享上下文这是专业说法主播还在研究简单说法
+-|-|
+glewInit()|它用于初始化GLEW它比glfwIni()返回的更清晰可以返回错误信息
+-|-|
+glfwWindowShouldClose()|用于检测某个窗口是否关闭括号里放窗口名
+-|-|
+glfwGetTime|返回自GLFW初始化以来经过的时间
+-|-|
+glfwSwapBuffres()|主播个人认为是刷新画面缓冲用来播放下一个画面
+-|-|
+glfwPollEvents()|字面意思判断是否触发事件了至于是什么事件主播还在学习
+-|-|
+glfwDestroyWindod()|用于销毁窗口括号里填写需要销毁的窗口
+-|-|
+glfwTerminate()|用于终止GLFW库的调用
+
