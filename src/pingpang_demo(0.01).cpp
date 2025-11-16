@@ -1,28 +1,29 @@
-#pragma execution_character_set("utf-8")//½«×Ö·û¼¯ÉèÖÃÎªutf-8
+#pragma execution_character_set("utf-8")//å°†å­—ç¬¦é›†è®¾ç½®ä¸ºutf-8
 #include<gl/glew.h>
 #include<GLFW/glfw3.h>
 #include<iostream>
-void init(GLFWwindow* window) {}//³õÊ¼»¯´°¿Úº¯Êı
-void display(GLFWwindow* window, double currentTime)//»æÖÆº¯Êı
+void init(GLFWwindow* window) {}//åˆå§‹åŒ–çª—å£å‡½æ•°
+void display(GLFWwindow* window, double currentTime)//ç»˜åˆ¶å‡½æ•°
 {
-	glClearColor(0.0f, 0.0f, 0.0, 0.0f);//µ÷Õû±³¾°ÑÕÉ«(ºìÉ«,ÂÌÉ«,À¶É«,Í¸Ã÷¶È)
-	glClear(GL_COLOR_BUFFER_BIT);//Çå³ıÑÕÉ«»º³åÇø
+	glClearColor(0.0f, 0.0f, 0.0, 0.0f);//è°ƒæ•´èƒŒæ™¯é¢œè‰²(çº¢è‰²,ç»¿è‰²,è“è‰²,é€æ˜åº¦)
+	glClear(GL_COLOR_BUFFER_BIT);//æ¸…é™¤é¢œè‰²ç¼“å†²åŒº
 }
 int main(void) {
-	if (!glfwInit()) { std::exit(EXIT_FAILURE); }//³õÊ¼»¯GLFW¿âÊ§°ÜÔòÍË³ö³ÌĞò
-	glfwInitHint(GLFW_CONTEXT_VERSION_MAJOR, 4);//ÉèÖÃOpenglµÄÖ÷°æ±¾ºÅ
-	glfwInitHint(GLFW_CONTEXT_VERSION_MINOR, 6);//ÉèÖÃOpenglµÄ´Î°æ±¾ºÅ
-	GLFWwindow* window = glfwCreateWindow(800, 800, "Æ¹ÅÒÇò´óÕĞ°æ", NULL, NULL);//´´½¨Ò»¸ö´°¿Ú£¨¿í¶È£¬¸ß¶È£¬Ãû³Æ,Ö÷²¥²»ÖªµÀ£¬Ö÷²¥²»ÖªµÀ£©
-	glfwMakeContextCurrent(window);//ÁªÏµÉÏÏÂÎÄ
-	if (glewInit() != GLEW_OK) { std::exit(EXIT_FAILURE); }//³õÊ¼»¯GLEW¿âÊ§°ÜÔòÍË³ö³ÌĞò
-	init(window);//µ÷ÓÃ³õÊ¼»¯´°¿Úº¯Êı
-	while(!glfwWindowShouldClose(window))//µ±´°¿ÚÃ»ÓĞ¹Ø±ÕÊ±Ñ­»·»æÖÆ
+	glfwInitHint(GLFW_CONTEXT_VERSION_MAJOR, 4);//è®¾ç½®Openglçš„ä¸»ç‰ˆæœ¬å·
+	glfwInitHint(GLFW_CONTEXT_VERSION_MINOR, 6);//è®¾ç½®Openglçš„æ¬¡ç‰ˆæœ¬å·
+	if (!glfwInit()) { std::exit(EXIT_FAILURE); }//åˆå§‹åŒ–GLFWåº“å¤±è´¥åˆ™é€€å‡ºç¨‹åº
+	GLFWwindow* window = glfwCreateWindow(800, 800, "ä¹’ä¹“çƒå¤§æ‹›ç‰ˆ", NULL, NULL);//åˆ›å»ºä¸€ä¸ªçª—å£ï¼ˆå®½åº¦ï¼Œé«˜åº¦ï¼Œåç§°,ä¸»æ’­ä¸çŸ¥é“ï¼Œä¸»æ’­ä¸çŸ¥é“ï¼‰
+	glfwMakeContextCurrent(window);//è”ç³»ä¸Šä¸‹æ–‡
+	if (glewInit() != GLEW_OK) { std::exit(EXIT_FAILURE); }//åˆå§‹åŒ–GLEWåº“å¤±è´¥åˆ™é€€å‡ºç¨‹åº
+	init(window);//è°ƒç”¨åˆå§‹åŒ–çª—å£å‡½æ•°
+	while(!glfwWindowShouldClose(window))//å½“çª—å£æ²¡æœ‰å…³é—­æ—¶å¾ªç¯ç»˜åˆ¶
 	{
-		display(window, glfwGetTime());//µ÷ÓÃ»æÖÆº¯Êı
-		glfwSwapBuffers(window);//½»»»Ç°ºó»º³åÇø
-		glfwPollEvents();//¼ì²éÊÇ·ñÓĞ´¥·¢ÊÂ¼ş
+		display(window, glfwGetTime());//è°ƒç”¨ç»˜åˆ¶å‡½æ•°
+		glfwSwapBuffers(window);//äº¤æ¢å‰åç¼“å†²åŒº
+		glfwPollEvents();//æ£€æŸ¥æ˜¯å¦æœ‰è§¦å‘äº‹ä»¶
 	}
-	glfwDestroyWindow(window);//Ïú»Ù´°¿Ú
-	glfwTerminate();//ÖÕÖ¹GLFW¿â
+	glfwDestroyWindow(window);//é”€æ¯çª—å£
+	glfwTerminate();//ç»ˆæ­¢GLFWåº“
 	return 0;
+
 }
